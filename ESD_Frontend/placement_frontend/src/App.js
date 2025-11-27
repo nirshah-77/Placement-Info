@@ -6,8 +6,7 @@ import PlacementHistory from "./components/PlacementHistory";
 import Navbar from "./components/Navbar";
 import MainDashboard from "./components/MainDashboard";
 import PlacementDashboard from "./components/PlacementDashboard";
-
-
+import OrganisationStudents from "./components/OrganisationStudents";
 
 // Component to protect routes that require authentication
 const PrivateRoute = ({ children }) => {
@@ -71,6 +70,16 @@ function App() {
           element={
             <PrivateRoute>
               <StudentList />
+            </PrivateRoute>
+          }
+        />
+
+        {/* Protected Route for Organisation Students */}
+        <Route
+          path="/organisation-students"
+          element={
+            <PrivateRoute>
+              <OrganisationStudents />
             </PrivateRoute>
           }
         />
